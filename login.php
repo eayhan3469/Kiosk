@@ -9,15 +9,15 @@
 		$data = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 		
 		
-		if($result = mysqli_query($con,$data))
+		if($result = mysqli_query($connection,$data))
 			{
 				while($row = mysqli_fetch_array($result))
 				{
-				$username = $row["userName"];
+				$username2 = $row["username"];
 				}
 				 mysqli_free_result($result);
 			}
-		if (isset($username)) {
+		if (isset($username2)) {
 			$row = mysqli_fetch_array($data);
 			$id = $row['id'];
 			session_start();
