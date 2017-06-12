@@ -18,7 +18,8 @@
 				 mysqli_free_result($result);
 			}
 		if (isset($username2)) {
-			$row = mysqli_fetch_array($data);
+			$result = mysqli_query($connection,$data);
+			$row = mysqli_fetch_array($result);
 			$id = $row['id'];
 			session_start();
 			$_SESSION['user_id'] = $id;

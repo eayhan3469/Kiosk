@@ -1,0 +1,30 @@
+#container{
+	width: 812px;
+	position: relative;
+	margin: auto;
+	background-color: aqua;
+	
+}
+
+#menuBar{
+	height: 800px;
+	width: 200px;
+	float: left;
+	border-style: solid;
+	
+}
+
+#contentBar{
+	height: 800px;
+	width: 600px;
+	background-color: gray;
+	float: left;
+	border-style: ridge;
+}
+#logoDiv{
+	position: relative;
+	margin: auto;
+	margin-top: 2em;
+	display: block;
+	width: 325px;
+}
