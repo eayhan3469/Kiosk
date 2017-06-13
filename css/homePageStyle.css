@@ -1,68 +1,339 @@
-#container{
+#container {
 	width: 812px;
 	position: relative;
 	margin: auto;
-	background-color: aqua;
 }
 
-#menuBar{
-	height: 800px;
+body {
+	background-color: #EEEEEE;
+}
+
+#menuBar {
+	height: 500px;
 	width: 200px;
 	float: left;
-	
 }
-button{
-	float:left;
+
+button {
+	float: left;
 	display: block;
 }
-#contentBar{
-	height: 800px;
+
+#contentBar {
+	height: 500px;
 	width: 600px;
-	background-color: azure;
+	background-color: #f2f2f2;
 	float: left;
-	border-style: ridge;
 }
-#logoDiv{
+
+#logoDiv {
 	position: relative;
 	margin: auto;
 	margin-top: 2em;
 	display: block;
 	width: 325px;
 }
-* {box-sizing: border-box}
+
+* {
+	box-sizing: border-box
+}
 
 div.tab {
-    float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    width: 30%;
-    height: 300px;
-}
-div.tab button {
-    display: block;
-    background-color: inherit;
-    color: black;
-    padding: 20px 14px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 17px;
-}
-div.tab button:hover {
-    background-color: #ddd;
-}
-div.tab button.active {
-    background-color: #ccc;
+	float: left;
+	border: 1px solid #ccc;
+	background-color: #ffffff;
+	width: 30%;
+	height: 300px;
 }
 
+div.tab button {
+	display: block;
+	background-color: inherit;
+	color: black;
+	padding: 20px 14px;
+	width: 100%;
+	border: none;
+	outline: none;
+	text-align: center;
+	cursor: pointer;
+	transition: 0.3s;
+	font-size: 17px;
+}
+
+div.tab button:hover {
+	background-color: #4A89DC;
+	color: white;
+}
+
+div.tab button.active {
+	background-color: #3a5cd8;
+	color: white;
+}
+
+div.tab p {
+	color: #4A89DC;
+	text-align: center;
+	margin-top: 33px;
+}
+
+div.tab img {
+	margin-left: 25px;
+}
 .tabcontent {
-    float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 70%;
-    border-left: none;
-    height: 300px;
+	float: left;
+	padding: 0px 12px;
+	border: 1px solid #ccc;
+	width: 100%;
+	border-left: none;
+	height: 500px;
+}
+
+div.tabcontent h2 {
+	text-align: center;
+	font-weight: normal;
+	color: #4A89DC;
+}
+
+#line {
+	width: 500px;
+	margin: auto;
+	position: relative;
+}
+
+div.tabcontent form {
+	height: 380px;
+	width: 380px;
+	margin: 1.2em auto;
+	padding: 1em 2em 2em 2em;
+	background: #fafafa;
+	border: 1px solid #ebebeb;
+	box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+}
+
+.group {
+	position: relative;
+	margin-bottom: 25px;
+}
+
+div.group input {
+	font-size: 13px;
+	padding: 8px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+}
+div.group textarea {
+	font-size: 13px;
+	padding: 5px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+	height: 230px;
+	resize: none;
+}
+div.group input:focus {
+	outline: none;
+}
+div.group textarea:focus {
+	outline: none;
+}
+
+div.group label {
+	color: #999;
+	font-size: 13px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 3px;
+	top: 7px;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+#register_btn{
+	margin-top: -8px;
+}
+
+div.group input:focus ~ label,
+input.used ~ label {
+	top: -10px;
+	-webkit-transform: scale(.99);
+	transform: scale(.99);
+	left: -2px;
+	font-size: 13px;
+	color: #4a89dc;
+}
+div.group textarea:focus ~ label,
+textarea.used ~ label {
+	top: -10px;
+	-webkit-transform: scale(.99);
+	transform: scale(.99);
+	left: -2px;
+	font-size: 13px;
+	color: #4a89dc;
+}
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.bar:before,
+.bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #4a89dc;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.bar:before {
+	left: 50%;
+}
+
+.bar:after {
+	right: 50%;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+	width: 50%;
+}
+textarea:focus ~ .bar:before,
+textarea:focus ~ .bar:after {
+	width: 50%;
+}
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+input:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+}
+textarea:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+}
+
+/* Animations */
+
+@-webkit-keyframes inputHighlighter {
+	from {
+		background: #4a89dc;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}
+
+@keyframes inputHighlighter {
+	from {
+		background: #4a89dc;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}
+
+.button {
+	position: relative;
+	display: inline-block;
+	padding: 10px 16px;
+	margin: .3em 0 1em 0;
+	width: 100%;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 16px;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+	letter-spacing: 1px;
+	background: transparent;
+	border: 0;
+	border-bottom: 2px solid #3160B6;
+	cursor: pointer;
+	-webkit-transition: all 0.15s ease;
+	transition: all 0.15s ease;
+}
+
+
+.button:focus {
+	outline: 0;
+}
+
+.buttonBlue {
+	background: #4a89dc;
+	text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.buttonBlue:hover {
+	background: #357bd8;
+}
+
+.ripplesCircle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.25);
+}
+
+.ripples.is-active .ripplesCircle {
+	-webkit-animation: ripples .4s ease-in;
+	animation: ripples .4s ease-in;
+}
+
+@-webkit-keyframes ripples {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		padding-bottom: 200%;
+		opacity: 0;
+	}
+}
+
+@keyframes ripples {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		padding-bottom: 200%;
+		opacity: 0;
+	}
 }
