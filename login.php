@@ -20,7 +20,7 @@
 		if (isset($username2)) {
 			$result = mysqli_query($connection,$data);
 			$row = mysqli_fetch_array($result);
-			$id = $row['id'];
+			$id = $row["id"];
 			session_start();
 			$_SESSION['user_id'] = $id;
 			echo "success";
