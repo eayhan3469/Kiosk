@@ -1,1 +1,1 @@
-$('#date').datepicker({});
+$('#nDate').datepicker({dateFormat: 'yy-mm-dd'});

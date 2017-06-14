@@ -22,18 +22,20 @@
 		}
 	}
 ?>
-
 	<html>
+
 	<head>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>HOME</title>
 		<link rel="stylesheet" href="css/homePageStyle.css">
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	</head>
+
 	<body>
 		<div id="logoDiv"><img src="rtalogo.png"></div>
 		<br>
@@ -52,7 +54,7 @@
 				<div id="addUser" class="tabcontent">
 					<h2>REGISTER FORM</h2>
 					<div id="line"><img src="line2.png"></div>
-					<form method="post">
+					<form method="post" action="register.php">
 						<div class="group">
 							<input type="text" name="username" id="username" required> <span class="highlight"></span> <span class="bar"></span>
 							<label>Username</label>
@@ -73,36 +75,45 @@
 							<input type="text" name="second_name" id="second_name" required> <span class="highlight"></span> <span class="bar"></span>
 							<label>Second Name</label>
 						</div>
-						<button type="button" id="register_btn" class="button buttonBlue">Enter
+						<input type="hidden" id="date" name="date">
+						<button type="submit" id="register_btn" class="button buttonBlue">Enter
 							<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 						</button>
 					</form>
 				</div>
-				
-				<div id="addAnnouncement" class="tabcontent"> 
-					<h2>Add Announcement</h2>
+				<div id="addAnnouncement" class="tabcontent">
+					<h2>Add Notice</h2>
 					<div id="line"><img src="line2.png"></div>
-					<form method="post">
-					<div class="group">
- 					<input id="date" type="text"/>
-					<span class="highlight"></span> 
-					<span class="bar"></span>
-					<label>Announcement Date</label>
-					</div>
-						
-					<div class="group">
- 					<textarea></textarea>
-					<span class="highlight"></span> 
-					<span class="bar"></span>
-					<label>Announcement</label>
-					</div>
-					<button type="button" id="register_btn" class="button buttonBlue">Enter
-					<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-					</button>
+					<form method="post" action="addNotice.php">
+						<div class="group">
+							<input id="nDate" name= "nDate" type="date" /> <span class="highlight"></span> <span class="bar"></span>
+							<label>Notice Date</label>
+						</div>
+						<div class="group">
+							<textarea name="notice"></textarea> <span class="highlight"></span> <span class="bar"></span>
+							<label>Notice</label>
+						</div>
+						<button type="submit" id="register_btn" class="button buttonBlue">Enter
+							<div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+						</button>
 					</form>
 				</div>
 			</div>
 		</div>
+		<script>
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth() + 1; //January is 0!
+			var yyyy = today.getFullYear();
+			if (dd < 10) {
+				dd = '0' + dd;
+			}
+			if (mm < 10) {
+				mm = '0' + mm;
+			}
+			var today = yyyy + '-' + mm + '-' + dd;
+			document.getElementById("date").value = today;
+		</script>
 		
 		<script>
 			function openPage(evt, pageName) {
