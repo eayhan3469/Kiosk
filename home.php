@@ -30,6 +30,9 @@
 	<html>
 
 	<head>
+		 <link href="https://fonts.googleapis.com/css?family=Overpass:100,200,300,400,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
+
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -52,7 +55,7 @@
 				<br>
 				<br>
 				<button class="tablinks" id="defaultOpen" onclick="openPage(event,'addUser')">Add User</button>
-				<button class="tablinks" onclick="openPage(event,'addAnnouncement')">Add Announcements</button>
+				<button class="tablinks" onclick="openPage(event,'addAnnouncement')">Add Notice</button>
 				<button class="tablinks" onclick="location.href='logout.php'">Logout</button>
 			</div>
 			<div id="contentBar">
@@ -87,12 +90,14 @@
 					</form>
 				</div>
 				<div id="addAnnouncement" class="tabcontent">
-					<h2>Add Notice</h2>
+					<h2>ADD NOTICE</h2>
 					<div id="line"><img src="line2.png"></div>
 					<form method="post" action="addNotice.php">
+						<input id="nDate" name= "nDate" type="date" />
+						
 						<div class="group">
-							<input id="nDate" name= "nDate" type="date" /> <span class="highlight"></span> <span class="bar"></span>
-							<label>Notice Date</label>
+							<input id="dDate" name= "dDate" type="date" /> <span class="highlight"></span> <span class="bar"></span>
+							<label>Finish Date</label>
 						</div>
 						<div class="group">
 							<textarea name="notice"></textarea> <span class="highlight"></span> <span class="bar"></span>
@@ -106,18 +111,7 @@
 			</div>
 		</div>
 		<script>
-			var today = new Date();
-			var dd = today.getDate();
-			var mm = today.getMonth() + 1; //January is 0!
-			var yyyy = today.getFullYear();
-			if (dd < 10) {
-				dd = '0' + dd;
-			}
-			if (mm < 10) {
-				mm = '0' + mm;
-			}
-			var today = yyyy + '-' + mm + '-' + dd;
-			document.getElementById("date").value = today;
+			
 		</script>
 		
 		<script>

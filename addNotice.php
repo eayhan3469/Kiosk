@@ -1,6 +1,8 @@
 <?php
 	$nDate = $_POST["nDate"];
+	$dDate = $_POST["dDate"];
 	$notice = $_POST["notice"];
+	
 
 	echo $nDate;
 $con = mysqli_connect('127.0.0.1','root','root');//your host, username and password 
@@ -13,8 +15,8 @@ $con = mysqli_connect('127.0.0.1','root','root');//your host, username and passw
 		echo 'Database not selected';
 	}
 
-	$sql_2 = "INSERT INTO notices (content,date)
-	VALUES ('$notice','$nDate')";
+	$sql_2 = "INSERT INTO notices (content,date,endDate)
+	VALUES ('$notice','$nDate','$dDate')";
 	if ($con->query($sql_2) == TRUE) {
     echo "Successful";
 	header("refresh:2;url = home.php");

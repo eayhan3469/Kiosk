@@ -5,6 +5,8 @@
 	<title>Admin Login Panel</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Overpass:100,200,300,400,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
 </head>
 
 <body>
